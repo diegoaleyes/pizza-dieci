@@ -44,3 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartTotalContainer.textContent = `Total: $${total.toFixed(2)}`;
   }
 });
+function toggleMenu() {
+  const menuItems = document.querySelector('.menu-items');
+  menuItems.classList.toggle('active');
+}

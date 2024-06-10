@@ -319,3 +319,14 @@ body {
 
 /* Sección de bienvenida */
 /* Resto de estilos... */
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
