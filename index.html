@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dieci Napoletano</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo"><img src="logo5.jpeg" alt="Dieci Napoletano" width="80px"></h1>
+      <nav>
+        <ul class="menu-items">
+          <li><a href="#inicio" class="active">Inicio</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="welcome-section">
+    <div class="container">
+      <div class="welcome-content">
+        <h2>Bienvenido a Dieci Napoletano</h2>
+        <p>La vera pizza napoletana está aquí!</p>
+        <a href="#menu" class="btn">Ver menú</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+ <section id="sobre-nosotros" class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <h2>Sobre nosotros</h2>
+      <p>Somos apasionados por perfeccionar cada día la pizza napolitana. Queremos que nos conozcas para que podamos darte la mejor experiencia y que te traslades a Italia en cada bocado de pizza.</p>
+    </div>
+    <div class="about-images">
+      <img src="salsa tomate albahaca oliva.jpeg" alt="Imagen 1">
+      <img src="mortadela e pistaccio piscina pizza.jpeg" alt="Imagen 2">
+      <img src="porcion salami pizza.jpeg" alt="Imagen 3">
+      <img src="calzone napoletano.jpeg" alt="Imagen 4">
+      
+    </div>
+  </div>
+</section>
+
+
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <h2>Menú - Las 5 Mejores Pizzas Napolitanas</h2>
+      <div class="pizza-list">
+        <div class="pizza">
+          <img src="salami e margherita pizza.jpeg" alt="Pizza Margherita">
+          <h3>Pizza Margherita</h3>
+          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+        </div>
+        <div class="pizza">
+          <img src="calzone napoletano.jpeg" alt="Pizza Margherita">
+          <h3>Pizza Margherita</h3>
+          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+        </div>
+        <div class="pizza">
+          <img src="mortadela e pistaccio pizza detalle.jpeg" alt="Pizza Margherita">
+          <h3>Pizza Margherita</h3>
+          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+        </div>
+        <div class="pizza">
+          <img src="salami picante.jpeg" alt="Pizza Margherita">
+          <h3>Pizza Margherita</h3>
+          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+        </div>
+        <div class="pizza">
+          <img src="salami e margherita pizza.jpeg" alt="Pizza Margherita">
+          <h3>Pizza Margherita</h3>
+          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+        </div>
+        <div class="pizza">
+          <img src="salami pesto primer plano.jpeg" alt="Pizza Margherita">
+          <h3>Pizza Margherita</h3>
+          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+        </div>
+        <!-- Repite este patrón para las otras pizzas -->
+      </div>
+    </div>
+  </section>
+  <section class="contact-section">
+  <div class="container">
+    <h2>Reserva tu pedido con anticipación</h2>
+    <p>¡Haz tu pedido ahora y asegura tu lugar!</p>
+    <p>Para reservas, contáctanos al <a href="tel:600784769">6007-84769</a> o envíanos un mensaje por <a href="https://wa.me/600784769">WhatsApp</a>.</p>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Dieci Napoletano - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuItems = document.querySelector('.menu-items');
+
+    menuToggle.addEventListener('click', () => {
+      menuItems.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
