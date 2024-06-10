@@ -229,3 +229,18 @@ body {
   top: 0;
   z-index: 1000; /* Asegúrate de que el menú de navegación esté por encima de otros elementos */
 }
+/* Ajuste de estilos solo para dispositivos más pequeños */
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 30px; /* Reducir tamaño del logo para pantallas más pequeñas */
+  }
+
+  .menu-items li {
+    margin-right: 5px; /* Reducir espaciado entre elementos del menú */
+  }
+
+  .menu-items a {
+    padding: 3px 6px; /* Ajustar padding para pantallas más pequeñas */
+    font-size: 14px; /* Reducir tamaño de fuente para pantallas más pequeñas */
+  }
+}
