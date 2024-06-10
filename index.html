@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dieci Napoletano</title>
   <link rel="stylesheet" href="styles.css">
-  
+  <script src="script.js"></script>
 </head>
 <body>
   <header class="navbar">
@@ -17,85 +17,64 @@
           <li><a href="#menu">Menú</a></li>
           <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#carrito">Carrito</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section id="inicio" class="welcome-section">
-    <div class="container">
-      <div class="welcome-content">
-        <h2>Bienvenido a Dieci Napoletano</h2>
-        <p>La vera pizza napoletana está aquí!</p>
-        <a href="#menu" class="btn">Ver menú</a>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
- <section id="sobre-nosotros" class="about-section">
-  <div class="container">
-    <div class="about-content">
-      <h2>Sobre nosotros</h2>
-      <p>Somos apasionados por perfeccionar cada día la pizza napolitana. Queremos que nos conozcas para que podamos darte la mejor experiencia y que te traslades a Italia en cada bocado de pizza.</p>
-    </div>
-    <div class="about-images">
-      <img src="salsa tomate albahaca oliva.jpeg" alt="Imagen 1">
-      <img src="mortadela e pistaccio piscina pizza.jpeg" alt="Imagen 2">
-      <img src="porcion salami pizza.jpeg" alt="Imagen 3">
-      <img src="calzone napoletano.jpeg" alt="Imagen 4">
-      
-    </div>
-  </div>
-</section>
-
-
   <section id="menu" class="menu-section">
     <div class="container">
       <h2>Menú - Las 5 Mejores Pizzas Napolitanas</h2>
       <div class="pizza-list">
-        <div class="pizza">
+        <div class="pizza" data-name="Pizza Margherita" data-price="10">
           <img src="salami e margherita pizza.jpeg" alt="Pizza Margherita">
           <h3>Pizza Margherita</h3>
           <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+          <p>Precio: $10</p>
+          <button class="add-to-cart-btn">Agregar al carrito</button>
         </div>
-        <div class="pizza">
-          <img src="calzone napoletano.jpeg" alt="Pizza Margherita">
-          <h3>Pizza Margherita</h3>
-          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+        <div class="pizza" data-name="Calzone Napolitano" data-price="12">
+          <img src="calzone napoletano.jpeg" alt="Calzone Napolitano">
+          <h3>Calzone Napolitano</h3>
+          <p>Ingredientes: Tomate, mozzarella, ricotta, salami</p>
+          <p>Precio: $12</p>
+          <button class="add-to-cart-btn">Agregar al carrito</button>
         </div>
-        <div class="pizza">
-          <img src="mortadela e pistaccio pizza detalle.jpeg" alt="Pizza Margherita">
-          <h3>Pizza mortadela e pistaccio</h3>
+        <div class="pizza" data-name="Pizza Mortadela e Pistaccio" data-price="14">
+          <img src="mortadela e pistaccio pizza detalle.jpeg" alt="Pizza Mortadela e Pistaccio">
+          <h3>Pizza Mortadela e Pistaccio</h3>
           <p>Ingredientes: base de pesto, mozzarella fior di latte, albahaca, mortadella e pistaccio</p>
+          <p>Precio: $14</p>
+          <button class="add-to-cart-btn">Agregar al carrito</button>
         </div>
-        <div class="pizza">
-          <img src="salami picante.jpeg" alt="Pizza Margherita">
-          <h3>Pizza salami piccante</h3>
-          <p>Ingredientes: Tomate, salami di verona, olivas,  mozzarella, albahaca</p>
+        <!-- Agrega las demás pizzas aquí -->
+        <div class="pizza" data-name="Pizza Salami Piccante" data-price="13">
+          <img src="salami picante.jpeg" alt="Pizza Salami Piccante">
+          <h3>Pizza Salami Piccante</h3>
+          <p>Ingredientes: Tomate, salami di verona, olivas, mozzarella, albahaca</p>
+          <p>Precio: $13</p>
+          <button class="add-to-cart-btn">Agregar al carrito</button>
         </div>
-        <div class="pizza">
-          <img src="WEB SITES DIECI/CIPOLLA CHAMP Y GORGONZOLA PIZZA.jpeg" alt="Pizza Margherita">
-          <h3>cipolla e funghi</h3>
+        <div class="pizza" data-name="Pizza Cipolla e Funghi" data-price="11">
+          <img src="cipolla champ y gorgonzola pizza.jpeg" alt="Pizza Cipolla e Funghi">
+          <h3>Pizza Cipolla e Funghi</h3>
           <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+          <p>Precio: $11</p>
+          <button class="add-to-cart-btn">Agregar al carrito</button>
         </div>
-        <div class="pizza">
-          <img src="salami pesto primer plano.jpeg" alt="Pizza Margherita">
-          <h3>Pizza Margherita</h3>
-          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
-        </div>
-        <!-- Repite este patrón para las otras pizzas -->
       </div>
     </div>
   </section>
-  <section class="contact-section">
-  <div class="container">
-    <h2>Reserva tu pedido con anticipación</h2>
-    <p>¡Haz tu pedido ahora y asegura tu lugar!</p>
-    <p>Para reservas, contáctanos al <a href="tel:600784769">6007-84769</a> o envíanos un mensaje por <a href="https://wa.me/600784769">WhatsApp</a>.</p>
-  </div>
-</section>
+
+  <section id="carrito" class="cart-section">
+    <div class="container">
+      <h2>Carrito de Compras</h2>
+      <div id="cart-items"></div>
+      <div id="cart-total"></div>
+      <button id="clear-cart-btn">Vaciar Carrito</button>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
@@ -103,13 +82,6 @@
     </div>
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuItems = document.querySelector('.menu-items');
-
-    menuToggle.addEventListener('click', () => {
-      menuItems.classList.toggle('active');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
