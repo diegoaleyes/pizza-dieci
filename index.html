@@ -1,102 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dieci Napoletano</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dieci Napoletano</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos adicionales para dispositivos móviles */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                cursor: pointer;
+            }
+            .bar {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin: 5px 0;
+                transition: 0.4s;
+            }
+            .container {
+                position: relative;
+            }
+            .menu-items {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #222;
+                z-index: 1000;
+            }
+            .menu-items ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            .menu-items ul li {
+                padding: 10px 20px;
+                border-bottom: 1px solid #444;
+            }
+            .menu-items ul li:last-child {
+                border-bottom: none;
+            }
+            .menu-items ul li a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+                transition: 0.3s;
+            }
+            .menu-items ul li a:hover {
+                background-color: #444;
+            }
+            .show-menu {
+                display: block !important;
+            }
+        }
+    </style>
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo"><img src="logo5.jpeg" alt="Dieci Napoletano" width="80px"></h1>
-      <nav>
-        <ul class="menu-items">
-          <li><a href="#inicio" class="active">Inicio</a></li>
-          <li><a href="#menu">Menú</a></li>
-          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#carrito">Carrito</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">
+                <img src="logo5.jpeg" alt="Dieci Napoletano" width="80px">
+            </h1>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav class="menu-items">
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#carrito">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section id="menu" class="menu-section">
-    <div class="container">
-      <h2>Menú - Las 5 Mejores Pizzas Napolitanas</h2>
-      <div class="pizza-list">
-        <div class="pizza" data-name="Pizza Margherita" data-price="10">
-          <img src="margherita pizza cerveza barra.jpeg" alt="Pizza Margherita">
-          <h3>Pizza Margherita</h3>
-          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
-          <p>Precio: $10</p>
-          <button class="add-to-cart-btn">Agregar al carrito</button>
+    <!-- Sección de inicio -->
+    <section id="inicio" class="inicio-section">
+        <div class="inicio-content">
+            <button class="inicio-btn">Pizzas</button>
         </div>
-        <div class="pizza" data-name="Calzone Napolitano" data-price="12">
-          <img src="WEB SITES DIECI/CALZONE.jpeg" alt="Calzone Napolitano">
-          <h3>Calzone Napolitano</h3>
-          <p>Ingredientes: Tomate, mozzarella, ricotta, salami</p>
-          <p>Precio: $12</p>
-          <button class="add-to-cart-btn">Agregar al carrito</button>
-        </div>
-        <div class="pizza" data-name="Calzone Napolitano" data-price="12">
-          <img src="WEB SITES DIECI/CALZONE.jpeg" alt="Calzone Napolitano">
-          <h3>Calzone Napolitano</h3>
-          <p>Ingredientes: Tomate, mozzarella, ricotta, salami</p>
-          <p>Precio: $12</p>
-          <button class="add-to-cart-btn">Agregar al carrito</button>
-        </div>
-        <div class="pizza" data-name="Pizza Mortadela e Pistaccio" data-price="14">
-          <img src="WEB SITES DIECI/mortadela e pistaccio pizza.jpeg" alt="Pizza Mortadela e Pistaccio">
-          <h3>Pizza Mortadela e Pistaccio</h3>
-          <p>Ingredientes: base de pesto, mozzarella fior di latte, albahaca, mortadella e pistaccio</p>
-          <p>Precio: $14</p>
-          <button class="add-to-cart-btn">Agregar al carrito</button>
-        </div>
+    </section> 
 
-        <div class="pizza" data-name="JAMON" data-price="12">
-          <img src="WEB SITES DIECI/JAMON (2).jpeg" alt="JAMON">
-          <h3>JAMON</h3>
-          <p>Ingredientes: Tomate, mozzarella, ricotta, salami</p>
-          <p>Precio: $12</p>
-          <button class="add-to-cart-btn">Agregar al carrito</button>
-        </div>
-        <!-- Agrega las demás pizzas aquí -->
-        <div class="pizza" data-name="Pizza Salami Piccante" data-price="13">
-          <img src="WEB SITES DIECI/WhatsApp Image 2024-06-02 at 18.08.14 (2).jpeg" alt="Pizza Salami Piccante">
-          <h3>Pizza Salami Piccante</h3>
-          <p>Ingredientes: Tomate, salami di verona, olivas, mozzarella, albahaca</p>
-          <p>Precio: $13</p>
-          <button class="add-to-cart-btn">Agregar al carrito</button>
-        </div>
-        <div class="pizza" data-name="Pizza Cipolla e Gorgonzola" data-price="11">
-          <img src="WEB SITES DIECI/CIPOLLA CHAMP Y GORGONZOLA PIZZA.jpeg" alt="Pizza Cipolla e Funghi">
-          <h3>Pizza Cipolla e Funghi</h3>
-          <p>Ingredientes: Tomate, mozzarella, albahaca</p>
-          <p>Precio: $11</p>
-          <button class="add-to-cart-btn">Agregar al carrito</button>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2>Nuestras Pizzas Napoletanas</h2>
+            <div class="pizza-list">
+                <div class="pizza" data-name="Pizza Cipolla e Gorgonzola" data-price="11">
+                    <img src="WEB SITES DIECI/CIPOLLA CHAMP Y GORGONZOLA PIZZA.jpeg" alt="Pizza Cipolla e Funghi">
+                    <h3>Pizza Cipolla e Funghi</h3>
+                    <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+                    <p>Precio: $11</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
 
-  <section id="carrito" class="cart-section">
-    <div class="container">
-      <h2>Carrito de Compras</h2>
-      <div id="cart-items"></div>
-      <div id="cart-total"></div>
-      <button id="clear-cart-btn">Vaciar Carrito</button>
-    </div>
-  </section>
+                <!-- Agrega las demás pizzas aquí -->
+                <div class="pizza" data-name="Pizza Salami Piccante" data-price="13">
+                    <img src="WEB SITES DIECI/WhatsApp Image 2024-06-02 at 18.08.14 (2).jpeg" alt="Pizza Salami Piccante">
+                    <h3>Pizza Salami Piccante</h3>
+                    <p>Ingredientes: Tomate, salami di verona, olivas, mozzarella, albahaca</p>
+                    <p>Precio: $13</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Dieci Napoletano - Todos los derechos reservados</p>
-    </div>
-  </footer>
+                <div class="pizza" data-name="prosciutto" data-price="12">
+                    <img src="WEB SITES DIECI/JAMON (2).jpeg" alt="JAMON">
+                    <h3>Prosciutto</h3>
+                    <p>Ingredientes: Tomate San Marzano, mozzarella fior di latte, albahaca y oliva</p>
+                    <p>Precio: $12</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+                <div class="pizza" data-name="margherita" data-price="12">
+                    <img src="WEB SITES DIECI/salami picante pizza.jpeg" alt="JAMON">
+                    <h3>Prosciutto</h3>
+                    <p>Ingredientes: Tomate San Marzano, mozzarella fior di latte, albahaca y oliva</p>
+                    <p>Precio: $12</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+                <div class="pizza" data-name="prosciutto" data-price="12">
+                    <img src="WEB SITES DIECI/JAMON (2).jpeg" alt="JAMON">
+                    <h3>Prosciutto</h3>
+                    <p>Ingredientes: Tomate San Marzano, mozzarella fior di latte, albahaca y oliva</p>
+                    <p>Precio: $12</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
 
-  <script src="script.js"></script>
+<div class="pizza" data-name="prosciutto" data-price="12">
+                    <img src="WEB SITES DIECI/JAMON (2).jpeg" alt="JAMON">
+                    <h3>Prosciutto</h3>
+                    <p>Ingredientes: Tomate San Marzano, mozzarella fior di latte, albahaca y oliva</p>
+                    <p>Precio: $12</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="pizza" data-name="mortadela e pistaccio" data-price="12">
+                    <img src="WEB SITES DIECI/mortadela e pistaccio pizza.jpeg" alt="mortadela e pistaccio">
+                    <h3>MORTADELA E PISTACCIO</h3>
+                    <p>Base exquisita de pesto, queso grana padanno, mozzarella fior di latte, mortadela, pistaccio, oliva y albahaca</p>
+                    <p>Precio: $12</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="pizza" data-name="Pizza Margherita" data-price="10">
+                    <img src="WEB SITES DIECI/margherita napoletana pizza.jpeg" alt="Pizza Margherita">
+                    <h3>Pizza Margherita</h3>
+                    <p>Ingredientes: Tomate, mozzarella, albahaca</p>
+                    <p>Precio: $10</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="pizza" data-name="prosciutto e funghi" data-price="14">
+                    <img src="WEB SITES DIECI/jamon e funghi.jpeg" alt="Pizza prosciutto e funghi">
+                    <h3>Pizza Prosciutto e funghi</h3>
+                    <p>Ingredientes: base de pesto, mozzarella fior di latte, albahaca, mortadella e pistaccio</p>
+                    <p>Precio: $14</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="pizza" data-name="Calzone Napolitano" data-price="12">
+                    <img src="WEB SITES DIECI/calzone napoletano (2).jpeg" alt="Calzone Napolitano">
+                    <h3>Calzone Napolitano</h3>
+                    <p>Ingredientes: Tomate, mozzarella, ricotta, salami</p>
+                    <p>Precio: $12</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="pizza" data-name="rucula e jamon serrano" data-price="12">
+                    <img src="WEB SITES DIECI/rucula jamon serrano napolitana.jpeg" alt="Rucula y jamon serrano">
+                    <h3>Rucula y Jamon Serrano</h3>
+                    <p>Ingredientes: Tomate, mozzarella, ricotta, salami</p>
+                    <p>Precio: $12</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="carrito" class="cart-section">
+        <div class="container">
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <button id="clear-cart-btn">Vaciar Carrito</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dieci Napoletano - Todos los derechos reservados</p>
+        </div>
+    </footer>
 </body>
 </html>
