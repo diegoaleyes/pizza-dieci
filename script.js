@@ -1,50 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cart = [];
-  const cartItemsContainer = document.getElementById('cart-items');
-  const cartTotalContainer = document.getElementById('cart-total');
-  const clearCartButton = document.getElementById('clear-cart-btn');
-  
-  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-    button.addEventListener('click', event => {
-      const pizzaElement = event.target.closest('.pizza');
-      const pizzaName = pizzaElement.getAttribute('data-name');
-      const pizzaPrice = parseFloat(pizzaElement.getAttribute('data-price'));
-
-      const existingItem = cart.find(item => item.name === pizzaName);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ name: pizzaName, price: pizzaPrice, quantity: 1 });
-      }
-
-      updateCartDisplay();
-    });
-  });
-
-  clearCartButton.addEventListener('click', () => {
-    cart.length = 0;
-    updateCartDisplay();
-  });
-
-  function updateCartDisplay() {
-    cartItemsContainer.innerHTML = '';
-    let total = 0;
-    cart.forEach(item => {
-      const cartItemElement = document.createElement('div');
-      cartItemElement.classList.add('cart-item');
-      cartItemElement.innerHTML = `
-        <span class="cart-item-name">${item.name}</span>
-        <span class="cart-item-quantity">${item.quantity}</span>
-        <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
-      `;
-      cartItemsContainer.appendChild(cartItemElement);
-      total += item.price * item.quantity;
-    });
-
-    cartTotalContainer.textContent = `Total: $${total.toFixed(2)}`;
-  }
-});
+// script.js
 function toggleMenu() {
   const menuItems = document.querySelector('.menu-items');
-  menuItems.classList.toggle('active');
+  menuItems.classList.toggle('show-menu');
 }
+
+// Agregar al carrito
+document.addEventListener('DOMContentLoaded', function() {
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const clearCartBtn = document.getElementById('clear-cart-btn');
+  let cart = [];
+
+  function renderCart() {
+    cartItems.innerHTML = '';
+    cart.forEach((item, index) => {
+      const itemElement = document.createElement('div');
+      itemElement.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+      cartItems.appendChild(itemElement);
+    });
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    cartTotal.textContent = `Total: $${total}`;
+  }
+
+  function addToCart(event) {
+    const pizza = event.target.closest('.pizza');
+    const name = pizza.dataset.name;
+    const price = Number(pizza.dataset.price);
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+    renderCart();
+  }
+
+  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', addToCart);
+  });
+
+  clearCartBtn.addEventListener('click', () => {
+    cart = [];
+    renderCart();
+  });
+});

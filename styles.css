@@ -13,6 +13,167 @@ body {
   color: #fff;
   padding: 20px 0;
   border-bottom: 2px solid #d35400;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-items ul {
+  display: flex;
+  align-items: center;
+}
+
+.menu-items li {
+  margin-right: 20px;
+}
+
+.menu-items a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-items a:hover {
+  color: #d35400;
+}
+
+/* Sección del menú */
+.menu-section {
+  padding: 100px 0;
+  background: #1a1a1a;
+}
+
+.menu-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pizza-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pizza {
+  background: #333;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.pizza img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+  background: #d35400;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-to-cart-btn:hover {
+  background: #e67e22;
+}
+
+/* Sección del carrito */
+.cart-section {
+  padding: 50px 0;
+  background: #222;
+}
+
+#cart-items {
+  margin-bottom: 20px;
+}
+
+#cart-total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#clear-cart-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#clear-cart-btn:hover {
+  background: #c0392b;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 2px solid #d35400;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-items.show-menu {
+    display: flex;
+  }
+}
+este es el css
+
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Barra de navegación */
+.navbar {
+  background: linear-gradient(to bottom, #222, #1a1a1a);
+  color: #fff;
+  padding: 20px 0;
+  border-bottom: 2px solid #d35400;
 }
 
 .navbar .container {
@@ -329,4 +490,64 @@ body {
   height: 3px;
   background-color: #fff;
   margin: 5px 0;
+}
+/* Estilos para la sección Inicio */
+.welcome-section {
+  background-color: #222; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 100px 0; /* Espaciado interno */
+}
+
+/* Estilos para el título de la sección Inicio */
+.welcome-section h1 {
+  font-size: 36px; /* Tamaño de fuente */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para el texto de la sección Inicio */
+.welcome-section p {
+  font-size: 18px; /* Tamaño de fuente */
+}
+
+/* Estilos para la sección Sobre Nosotros */
+.about-section {
+  background-color: #333; /* Color de fondo */
+  color: #7ff0f0; /* Color del texto */
+  padding: 100px 0; /* Espaciado interno */
+}
+
+/* Estilos para el título de la sección Sobre Nosotros */
+.about-section h2 {
+  font-size: 36px; /* Tamaño de fuente */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para el texto de la sección Sobre Nosotros */
+.about-section p {
+  font-size: 18px; /* Tamaño de fuente */
+}
+/* Estilos para la sección Inicio */
+.welcome-section {
+  background-image: url('ruta_de_la_imagen.jpg'); /* Ruta de la imagen */
+  background-size: cover; /* Cubrir todo el contenedor */
+  background-position: center; /* Centrar la imagen */
+  height: 95vh; /* Altura del contenedor, 95% de la altura de la pantalla */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center;
+  color: #fff; /* Color del texto */
+}
+
+/* Estilos para la sección Sobre Nosotros */
+.about-section {
+  background-image: url('margherita\ pizza\ cerveza\ barra.jpeg'); /* Ruta de la imagen */
+  background-size: cover; /* Cubrir todo el contenedor */
+  background-position: center; /* Centrar la imagen */
+  height: 95vh; /* Altura del contenedor, 95% de la altura de la pantalla */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center;
+  color: #fff; /* Color del texto */
 }
