@@ -140,6 +140,7 @@ body {
   background: #c0392b;
 }
 
+<<<<<<< Updated upstream
 /* Footer */
 footer {
   background: #111;
@@ -178,4 +179,8 @@ footer {
     width: 100vw;
     height: 100vw;
   }
+=======
+.pizza h3 {
+  margin-top: 10px
+>>>>>>> Stashed changes
 }
